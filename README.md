@@ -51,6 +51,7 @@ python packet_sniffer.py
 
 🔹 **Ensure your network interface is active and has traffic for capturing packets**
 
-🔹 **wrpcap("<file name>", capture) stores a pcap file for wireshark analysis and stuff**
+🔹 **wrpcap("<file name>", capture) stores a pcap file for wireshark analysis and stuff, change the parameter store to true and get the result of sniff function to be stored in a variable, 
+      eg var = sniff(...), then check if var is not null and do wrcap(filename,var). Remember to import wrcap from scapy first.**
 
 🔹 **sniff(offline="<file name>") for offline view of pcap file (use with prn)**
