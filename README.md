@@ -47,7 +47,7 @@ python packet_sniffer.py
 🔹 **Run as Administrator:**
 
     Linux/macOS: Use sudo (e.g., sudo python packet_sniffer.py)
-    Windows: Run the script as Administrator
+    Windows: Won't work for Windows
 
 🔹 **Ensure your network interface is active and has traffic for capturing packets**
 
