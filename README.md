@@ -1,62 +1,56 @@
-Packet Sniffer using Scapy
+# 🛠 Packet Sniffer Script
 
-This Python script captures network packets in real-time using the scapy library. It provides a summary of captured packets, exports the data to a CSV file, and visualizes packet distribution based on protocol type.
+A **Python-based packet sniffer** that captures live network packets, logs their details, and saves the data to a CSV file. It also generates a bar chart showing the distribution of different packet types.  
 
-Features
+## 📌 Features
 
-Sniffs network packets on a specified interface.
+✔️ Captures live network packets  
+✔️ Identifies packet types (**ICMP, TCP, UDP, ARP, etc.**)  
+✔️ Logs timestamped packet summaries  
+✔️ Exports packet data to a **CSV file**  
+✔️ Generates a **bar chart** of protocol distribution  
+✔️ **Auto-stops sniffing** after a set timeout (default: 10 seconds)  
 
-Captures and logs packet summaries with timestamps.
+---
 
-Identifies protocol types (ICMP, TCP, UDP, ARP, etc.).
+## ⚙️ Prerequisites
 
-Stores captured packet details in a CSV file.
+Make sure you have the following installed:  
 
-Generates a bar chart visualization of protocol distribution.
+### 🔹 Required Software
+- **Python 3.x**  
 
-Stops sniffing automatically after a specified duration (default: 10 seconds).
+### 🔹 Required Python Libraries  
+Install the necessary dependencies using:  
 
-Requirements
-
-Ensure you have the following dependencies installed:
-
+```sh
 pip install scapy matplotlib
+```
 
-Usage
 
-Run the script and provide the necessary inputs:
+### 🔹 **Usage**
+**1️⃣ Run the script:**
 
+```sh
 python packet_sniffer.py
+```
 
-Enter the network interface to sniff (e.g., eth0 or wlan0).
+**2️⃣ Enter the required inputs when prompted:**
+    Network Interface (e.g., eth0, wlan0)
+    CSV Filename (e.g., packets.csv)
+    
+---
 
-Provide the filename to save captured packet data as a CSV file (e.g., packets.csv).
 
-Output
+## 📝 **Notes**
 
-Console Output: Displays captured packets along with timestamps.
+🔹 **Run as Administrator:**
 
-CSV File: Saves packet summaries and timestamps.
+    Linux/macOS: Use sudo (e.g., sudo python packet_sniffer.py)
+    Windows: Run the script as Administrator
 
-Bar Chart: Generates and saves a visualization (packet_type_count.png) showing protocol counts.
+🔹 **Ensure your network interface is active and has traffic for capturing packets**
 
-Functions Overview
+🔹 **wrpcap("<file name>", capture) stores a pcap file for wireshark analysis and stuff**
 
-packet_handler(packet): Processes and logs packet details.
-
-export_to_csv(filename, data): Saves captured data to a CSV file.
-
-plot_packet_data(): Generates a bar chart of protocol counts.
-
-start_sniffing(interface, csv_filename): Initiates packet sniffing on the specified interface.
-
-Notes
-
-Ensure you have the necessary permissions to sniff network traffic (run as root if required).
-
-Modify the sniffing timeout (10 seconds) as needed in the script.
-
-License
-
-This project is licensed under the MIT License.
-
+🔹 **sniff(offline="<file name>") for offline view of pcap file (use with prn)**
